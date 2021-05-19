@@ -13,13 +13,15 @@ env:
   FORCE_COLOR: 1
 
 jobs:
-  test_linux:
-    name: ${{ matrix.os }} (${{ matrix.browser }})
-    strategy:
-      fail-fast: false
-      matrix:
-        browser: [chromium, firefox, webkit]
-        os: [ubuntu-20.04]
-    runs-on: ${{ matrix.os }}
+  test_linux_20:
+    name: Ubuntu 20.04
+    runs-on: ubuntu-20.04
     steps:
-    - run: echo "Yo I did run ${{ matrix.os}} ${{matrix.browser }}"
+    - run: echo "Yo I am Ubuntu 20.04"
+
+  test_linux_18:
+    environment: "ubuntu-18-04-env"
+    name: Ubuntu 18.04
+    runs-on: ubuntu-18.04
+    steps:
+    - run: echo "Yo I am Ubuntu 18.04"
