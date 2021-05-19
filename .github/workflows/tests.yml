@@ -1,5 +1,4 @@
 name: "tests"
-environment: "ubuntu-18-04-env"
 
 on:
   push:
@@ -21,6 +20,7 @@ jobs:
     - run: echo "Yo I am Ubuntu 20.04"
 
   test_linux_18:
+    environment: "ubuntu-18-04-env"
     name: Ubuntu 18.04
     runs-on: ubuntu-18.04
     steps:
